@@ -609,7 +609,8 @@ public class NumberPicker extends LinearLayout {
 
         TypedArray attributesArray = context.obtainStyledAttributes(attrs, R.styleable.NumberPicker, defStyle, 0);
 
-        mSelectionDivider = ContextCompat.getDrawable(context, R.drawable.np_numberpicker_selection_divider);
+        // Disable default selection divider to avoid NotFoundException on LPDI screens
+        mSelectionDivider = null;
 
         mSelectionDividerColor = attributesArray.getColor(R.styleable.NumberPicker_np_dividerColor, mSelectionDividerColor);
 
